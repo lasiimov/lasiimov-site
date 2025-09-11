@@ -1,17 +1,23 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lasiimov Upscaler</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-</head>
 <body>
   <div class="container">
     <h1>Upscaler</h1>
     <p>Melhora a qualidade das tuas imagens com inteligência artificial diretamente no navegador.</p>
     <p>Carrega uma imagem, escolhe a resolução e obtém resultados em segundos.</p>
+
+    <!-- Banner Google AdSense -->
+    <div class="adsense-banner">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5612542141651939"
+           crossorigin="anonymous"></script>
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-5612542141651939"
+           data-ad-slot="9721040671"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
 
     <div id="drop-area" role="region" aria-label="Área para arrastar e soltar imagens">
       <p>Arrasta e solta a tua imagem aqui</p>
@@ -19,19 +25,16 @@
       <button id="fileSelect" class="btn-primary" type="button">Escolher Imagem</button>
     </div>
 
-
-
-<div class="preview-container" id="preview-container">
-  <div class="preview-block" id="original-block">
-    <h3 class="preview-title">Antes</h3>
-    <img id="preview-original" src="" alt="Imagem original" style="display:none;" loading="lazy">
-  </div>
-  <div class="preview-block" id="enhanced-block">
-    <h3 class="preview-title">Depois</h3>
-    <img id="preview-enhanced" src="" alt="Imagem melhorada" style="display:none;" loading="lazy">
-  </div>
-</div>
-
+    <div class="preview-container" id="preview-container">
+      <div class="preview-block" id="original-block">
+        <h3 class="preview-title">Antes</h3>
+        <img id="preview-original" src="" alt="Imagem original" style="display:none;" loading="lazy">
+      </div>
+      <div class="preview-block" id="enhanced-block">
+        <h3 class="preview-title">Depois</h3>
+        <img id="preview-enhanced" src="" alt="Imagem melhorada" style="display:none;" loading="lazy">
+      </div>
+    </div>
 
     <button id="enhance" class="btn-primary" disabled>Melhorar imagem</button>
     <div id="loading" class="loading">Processando imagem...</div>
@@ -43,4 +46,3 @@
 
   <script src="js/script.js"></script>
 </body>
-</html>
