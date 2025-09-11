@@ -8,26 +8,6 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header class="header">
-    <div class="header-container">
-      <h1 class="logo">Lasiimov Tools</h1>
-      <nav class="nav-menu">
-        <ul>
-          <li><a href="index.html" class="nav-link active">Upscaler</a></li>
-          <li><a href="denoiser.html" class="nav-link">Denoiser</a></li>
-          <li><a href="colorizer.html" class="nav-link">Colorizer</a></li>
-          <li><a href="compressor.html" class="nav-link">Compressor</a></li>
-          <li><a href="about.html" class="nav-link">Sobre</a></li>
-        </ul>
-      </nav>
-      <button class="menu-toggle" aria-label="Abrir menu de navegação">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </header>
-
   <div class="container">
     <h1>Lasiimov Upscaler</h1>
     <p>Melhora a qualidade das tuas imagens com inteligência artificial diretamente no navegador.</p>
@@ -39,16 +19,19 @@
       <button id="fileSelect" class="btn-primary" type="button">Escolher Imagem</button>
     </div>
 
-    <div class="preview-container" id="preview-container">
-      <div class="preview-block" id="original-block">
-        <h3 class="preview-title">Antes</h3>
-        <img id="preview-original" src="" alt="Imagem original" style="display:none;" loading="lazy">
-      </div>
-      <div class="preview-block" id="enhanced-block">
-        <h3 class="preview-title">Depois</h3>
-        <img id="preview-enhanced" src="" alt="Imagem melhorada" style="display:none;" loading="lazy">
-      </div>
-    </div>
+
+
+<div class="preview-container" id="preview-container">
+  <div class="preview-block" id="original-block">
+    <h3 class="preview-title">Antes</h3>
+    <img id="preview-original" src="" alt="Imagem original" style="display:none;" loading="lazy">
+  </div>
+  <div class="preview-block" id="enhanced-block">
+    <h3 class="preview-title">Depois</h3>
+    <img id="preview-enhanced" src="" alt="Imagem melhorada" style="display:none;" loading="lazy">
+  </div>
+</div>
+
 
     <button id="enhance" class="btn-primary" disabled>Melhorar imagem</button>
     <div id="loading" class="loading">Processando imagem...</div>
@@ -57,18 +40,22 @@
       <p>Em desenvolvimento: Upload e melhoria de imagens com IA.</p>
     </footer>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5612542141651939"
-         crossorigin="anonymous"></script>
-    <!-- lasiimov-header -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-5612542141651939"
-         data-ad-slot="9721040671"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5612542141651939"
+     crossorigin="anonymous"></script>
+<!-- lasiimov-header -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5612542141651939"
+     data-ad-slot="9721040671"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    
   </div>
 
   <script src="js/script.js"></script>
