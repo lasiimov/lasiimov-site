@@ -136,4 +136,66 @@ footer {
   .preview-block {
     flex: 1 1 100%;
   }
+  /* Tab Styles */
+.tab-container {
+  margin: 30px 0;
+}
+
+.tab-menu {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Permite que as abas quebrem em telas pequenas */
+}
+
+.tab-link {
+  background-color: #2a2a2a;
+  color: #ccc;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+.tab-link:hover {
+  background-color: #333;
+  color: #4a90ff;
+  transform: translateY(-2px);
+}
+
+.tab-link.active {
+  background-color: #4a90ff;
+  color: #fff;
+}
+
+.tab-content {
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .tab-menu {
+    gap: 8px;
+  }
+
+  .tab-link {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    width: auto; /* Evita que as abas ocupem toda a largura */
+  }
+}
 }
