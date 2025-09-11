@@ -3,100 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lasiimov Tools</title>
+  <title>Lasiimov Upscaler</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <header class="header">
+    <div class="header-container">
+      <h1 class="logo">Lasiimov Tools</h1>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html" class="nav-link active">Upscaler</a></li>
+          <li><a href="denoiser.html" class="nav-link">Denoiser</a></li>
+          <li><a href="colorizer.html" class="nav-link">Colorizer</a></li>
+          <li><a href="compressor.html" class="nav-link">Compressor</a></li>
+          <li><a href="about.html" class="nav-link">Sobre</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" aria-label="Abrir menu de navegação">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
   <div class="container">
-    <h1>Lasiimov Tools</h1>
-    <p>Explora as nossas ferramentas de inteligência artificial para melhorar e editar imagens diretamente no navegador.</p>
+    <h1>Lasiimov Upscaler</h1>
+    <p>Melhora a qualidade das tuas imagens com inteligência artificial diretamente no navegador.</p>
+    <p>Carrega uma imagem, escolhe a resolução e obtém resultados em segundos.</p>
 
-    <!-- Sistema de Abas -->
-    <div class="tab-container">
-      <div class="tab-menu">
-        <button class="tab-link active" data-tab="upscaler">Upscaler</button>
-        <button class="tab-link" data-tab="denoiser">Denoiser</button>
-        <button class="tab-link" data-tab="colorizer">Colorizer</button>
-        <button class="tab-link" data-tab="compressor">Compressor</button>
-        <button class="tab-link" data-tab="about">Sobre</button>
+    <div id="drop-area" role="region" aria-label="Área para arrastar e soltar imagens">
+      <p>Arrasta e solta a tua imagem aqui</p>
+      <input type="file" id="fileElem" accept="image/*" style="display:none" aria-label="Selecionar imagem">
+      <button id="fileSelect" class="btn-primary" type="button">Escolher Imagem</button>
+    </div>
+
+    <div class="preview-container" id="preview-container">
+      <div class="preview-block" id="original-block">
+        <h3 class="preview-title">Antes</h3>
+        <img id="preview-original" src="" alt="Imagem original" style="display:none;" loading="lazy">
       </div>
-
-      <!-- Conteúdo das Abas -->
-      <div class="tab-content">
-        <!-- Aba Upscaler -->
-        <div id="upscaler" class="tab-pane active">
-          <p>Melhora a qualidade das tuas imagens com inteligência artificial diretamente no navegador.</p>
-          <p>Carrega uma imagem, escolhe a resolução e obtém resultados em segundos.</p>
-          <div id="drop-area" role="region" aria-label="Área para arrastar e soltar imagens">
-            <p>Arrasta e solta a tua imagem aqui</p>
-            <input type="file" id="fileElem" accept="image/*" style="display:none" aria-label="Selecionar imagem">
-            <button id="fileSelect" class="btn-primary" type="button">Escolher Imagem</button>
-          </div>
-          <div class="preview-container" id="preview-container">
-            <div class="preview-block" id="original-block">
-              <h3 class="preview-title">Antes</h3>
-              <img id="preview-original" src="" alt="Imagem original" style="display:none;" loading="lazy">
-            </div>
-            <div class="preview-block" id="enhanced-block">
-              <h3 class="preview-title">Depois</h3>
-              <img id="preview-enhanced" src="" alt="Imagem melhorada" style="display:none;" loading="lazy">
-            </div>
-          </div>
-          <button id="enhance" class="btn-primary" disabled>Melhorar imagem</button>
-          <div id="loading" class="loading">Processando imagem...</div>
-        </div>
-
-        <!-- Aba Denoiser -->
-        <div id="denoiser" class="tab-pane">
-          <p>Remove ruído das tuas imagens com inteligência artificial.</p>
-          <p>Carrega uma imagem e melhora a nitidez em poucos segundos.</p>
-          <div id="denoiser-drop-area" role="region" aria-label="Área para arrastar e soltar imagens">
-            <p>Arrasta e solta a tua imagem aqui</p>
-            <input type="file" id="denoiser-fileElem" accept="image/*" style="display:none" aria-label="Selecionar imagem">
-            <button id="denoiser-fileSelect" class="btn-primary" type="button">Escolher Imagem</button>
-          </div>
-          <button id="denoiser-enhance" class="btn-primary" disabled>Remover Ruído</button>
-          <div id="denoiser-loading" class="loading">Processando imagem...</div>
-        </div>
-
-        <!-- Aba Colorizer -->
-        <div id="colorizer" class="tab-pane">
-          <p>Adiciona cores vibrantes a imagens em preto e branco com IA.</p>
-          <p>Carrega uma imagem e transforma-a instantaneamente.</p>
-          <div id="colorizer-drop-area" role="region" aria-label="Área para arrastar e soltar imagens">
-            <p>Arrasta e solta a tua imagem aqui</p>
-            <input type="file" id="colorizer-fileElem" accept="image/*" style="display:none" aria-label="Selecionar imagem">
-            <button id="colorizer-fileSelect" class="btn-primary" type="button">Escolher Imagem</button>
-          </div>
-          <button id="colorizer-enhance" class="btn-primary" disabled>Colorizar Imagem</button>
-          <div id="colorizer-loading" class="loading">Processando imagem...</div>
-        </div>
-
-        <!-- Aba Compressor -->
-        <div id="compressor" class="tab-pane">
-          <p>Comprime imagens sem perder qualidade usando IA avançada.</p>
-          <p>Carrega uma imagem e reduz o tamanho do arquivo em segundos.</p>
-          <div id="compressor-drop-area" role="region" aria-label="Área para arrastar e soltar imagens">
-            <p>Arrasta e solta a tua imagem aqui</p>
-            <input type="file" id="compressor-fileElem" accept="image/*" style="display:none" aria-label="Selecionar imagem">
-            <button id="compressor-fileSelect" class="btn-primary" type="button">Escolher Imagem</button>
-          </div>
-          <button id="compressor-enhance" class="btn-primary" disabled>Comprimir Imagem</button>
-          <div id="compressor-loading" class="loading">Processando imagem...</div>
-        </div>
-
-        <!-- Aba Sobre -->
-        <div id="about" class="tab-pane">
-          <h2>Sobre o Lasiimov Tools</h2>
-          <p>Lasiimov Tools é uma coleção de ferramentas baseadas em inteligência artificial para edição de imagens diretamente no navegador. Desenvolvido para ser rápido, acessível e fácil de usar.</p>
-          <p>Estamos em desenvolvimento, adicionando novas funcionalidades e melhorando a experiência do utilizador.</p>
-        </div>
+      <div class="preview-block" id="enhanced-block">
+        <h3 class="preview-title">Depois</h3>
+        <img id="preview-enhanced" src="" alt="Imagem melhorada" style="display:none;" loading="lazy">
       </div>
     </div>
 
+    <button id="enhance" class="btn-primary" disabled>Melhorar imagem</button>
+    <div id="loading" class="loading">Processando imagem...</div>
+
     <footer>
-      <p>Em desenvolvimento: Ferramentas de edição de imagens com IA.</p>
+      <p>Em desenvolvimento: Upload e melhoria de imagens com IA.</p>
     </footer>
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5612542141651939"
